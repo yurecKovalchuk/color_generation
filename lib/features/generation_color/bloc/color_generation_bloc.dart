@@ -15,7 +15,7 @@ class ColorGenerationBloc extends Cubit<ColorGenerationState> {
         );
 
   /// Sets a random background color and emits a new state.
-  void setRandomColor() {
+  void setRandomBackgroundColor() {
     final Random random = Random();
     final generateColor = Color.fromRGBO(
       random.nextInt(256),

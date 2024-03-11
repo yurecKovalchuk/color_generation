@@ -1,7 +1,9 @@
 import 'package:color_generation/app/app.dart';
 import 'package:color_generation/features/features.dart';
+import 'package:color_generation/localization/l10n/app_localizations.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
 
 /// The main application widget that configures and initializes the routing
@@ -24,6 +26,16 @@ class ApplicationWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: _router,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en', ''),
+        Locale('uk', ''),
+      ],
     );
   }
 
